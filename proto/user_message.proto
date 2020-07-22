@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package codeedu;
+
+option go_package = "pb";
+
+message UserRequest {
+    string name = 1;
+    string email = 2;
+    string password = 3;
+}
+
+message UserResponse {
+    string token = 1;
+}
+
+service UserService {
+    rpc CrateUser (UserRequest) returns (UserResponse);
+}
